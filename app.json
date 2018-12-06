@@ -30,6 +30,7 @@
     "android": {
       "package": "com.sasystem.mobattandance",
       "permissions": [
+        "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
         "MANAGE_DOCUMENTS",
         "READ_CALENDAR",
