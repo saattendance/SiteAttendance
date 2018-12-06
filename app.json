@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "SITE Attendance",
+    "description": "Published changes.",
+    "slug": "tpsite-attendance",
+    "privacy": "public",
+    "sdkVersion": "31.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#F0F8FF"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sasystem.mobattandance"
+    },
+    "android": {
+      "package": "com.sasystem.mobattandance",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "MANAGE_DOCUMENTS",
+        "READ_CALENDAR",
+        "READ_EXTERNAL_STORAGE",
+        "READ_PHONE_STATE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_NETWORK_STATE"
+      ]
+    }
+  }
+}
