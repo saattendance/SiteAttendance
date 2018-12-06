@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\appConfig",
+    "\\lib",
+    "\\screens"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\appConfig\\config.js",
   "PreviewInSolutionExplorer": false
 }
