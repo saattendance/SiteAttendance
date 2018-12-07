@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\appConfig",
+    "\\containers",
+    "\\containers\\LoginContainer",
     "\\lib",
+    "\\navigation",
     "\\screens"
   ],
-  "SelectedNode": "\\appConfig\\config.js",
+  "SelectedNode": "\\containers\\LoginContainer\\index.js",
   "PreviewInSolutionExplorer": false
 }

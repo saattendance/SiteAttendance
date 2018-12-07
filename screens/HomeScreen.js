@@ -311,7 +311,6 @@ class HomeScreen extends Component<Props, State> {
                                     <Item success fixedLabel>
                                         <Label>{selectedEmployees.length == 1 ? selectedEmployees[0].CurrentStatus : 'Time'}</Label>
                                         <Input multiline disabled value={currentTime} />
-                                        <Icon name="checkmark-circle" />
                                     </Item>
                                 </CardItem>
                                 <CardItem>
@@ -360,6 +359,18 @@ class HomeScreen extends Component<Props, State> {
                                 </CardItem>
                                 {loading && <Spinner />}
                                 <CardItem>
+                                    <Left>
+                                        <Button success onPress={this.SaveTimeTracking}>
+                                            <Text> Save </Text>
+                                        </Button>
+                                    </Left>
+                                    <Right>
+                                        <Button danger onPress={() => this.clearForm()}>
+                                            <Text> Reset </Text>
+                                        </Button>
+                                    </Right>
+                                </CardItem>
+                                <CardItem>
                                     <MapView
                                         style={{ flex: 1, width: "100%", height: 175 }}
                                         region={this.state.region}
@@ -372,18 +383,6 @@ class HomeScreen extends Component<Props, State> {
                                             description={this.state.locationAddress}
                                         />
                                     </MapView>
-                                </CardItem>
-                                <CardItem>
-                                    <Left>
-                                        <Button success onPress={this.SaveTimeTracking}>
-                                            <Text> Save </Text>
-                                        </Button>
-                                    </Left>
-                                    <Right>
-                                        <Button danger onPress={() => this.clearForm()}>
-                                            <Text> Reset </Text>
-                                        </Button>
-                                    </Right>
                                 </CardItem>
                             </Card>
                         </View>
