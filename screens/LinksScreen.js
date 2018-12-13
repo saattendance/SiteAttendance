@@ -61,7 +61,7 @@ class LinksScreen extends Component<Props, State> {
       console.log(currentEmp);
       if (currentEmp) {
         this.setState({ selected2: currentEmp.ID });
-        this.getData(currentEmp.ID);
+          this.getData(currentEmp.ID, loggedInUser.CompanyID);
       }
     }
   }
@@ -84,23 +84,30 @@ class LinksScreen extends Component<Props, State> {
     }));
   };
 
-  getData = async id => {
+    getData = async (id, compid) => {
     if (!id) return;
     const { authToken } = this.props;
-    this.toggleLoading();
-    var dashboardData = await getEmployeeDashboard(authToken, id);
-    console.log(dashboardData);
-    if (dashboardData && dashboardData["EmployeeId"] !== undefined) {
-      this.setState({
-        dashboardData
-      });
-    }
+        this.toggleLoading();
+        try {
+            var dashboardData = await getEmployeeDashboard(authToken, id, compid);
+            console.log(dashboardData);
+            if (dashboardData && dashboardData["EmployeeId"] !== undefined) {
+                this.setState({
+                    dashboardData
+                });
+            }
+        }
+        catch (e) {
+            console.log(e);
+        }
     this.toggleLoading();
   };
 
   render() {
     const { allJobcodes, allEmployees, currentTime } = this.props;
-    const { loading, dashboardData } = this.state;
+      const { loading, dashboardData } = this.state;
+
+      //"HeadCount":"1","TotalHours":"12.37","EarlyIn":"00:00:00","LateIn":"00:09:14","EarlyOut":"00:00:00","OverTime":"04:38:44"
     //console.log(dashboardData);
     const year = new Date().getFullYear();
     return (
@@ -202,7 +209,7 @@ class LinksScreen extends Component<Props, State> {
                             alignItems: "center"
                           }}
                         >
-                          <H1 style={{ color: "#ffffff" }}>00:00</H1>
+                                                <H1 style={{ color: "#ffffff" }}>{dashboardData ? dashboardData.TotalHours : "00:00"}</H1>
                         </View>
                       </View>
                       <View
