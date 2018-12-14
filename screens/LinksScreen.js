@@ -22,7 +22,6 @@ import {
   Grid,
   Col,
   Row,
-  H1,
   H2,
   Spinner,
   Footer
@@ -91,7 +90,7 @@ class LinksScreen extends Component<Props, State> {
         try {
             var dashboardData = await getEmployeeDashboard(authToken, id, compid);
             console.log(dashboardData);
-            if (dashboardData && dashboardData["EmployeeId"] !== undefined) {
+            if (dashboardData) {
                 this.setState({
                     dashboardData
                 });
@@ -108,7 +107,7 @@ class LinksScreen extends Component<Props, State> {
       const { loading, dashboardData } = this.state;
 
       //"HeadCount":"1","TotalHours":"12.37","EarlyIn":"00:00:00","LateIn":"00:09:14","EarlyOut":"00:00:00","OverTime":"04:38:44"
-    //console.log(dashboardData);
+    console.log(dashboardData);
     const year = new Date().getFullYear();
     return (
       <Container style={styles.container}>
@@ -209,7 +208,7 @@ class LinksScreen extends Component<Props, State> {
                             alignItems: "center"
                           }}
                         >
-                                                <H1 style={{ color: "#ffffff" }}>{dashboardData ? dashboardData.TotalHours : "00:00"}</H1>
+                                                <H2 style={{ color: "#ffffff" }}>{dashboardData ? dashboardData.TotalHours : "00:00"}</H2>
                         </View>
                       </View>
                       <View
@@ -263,9 +262,9 @@ class LinksScreen extends Component<Props, State> {
                             alignItems: "center"
                           }}
                         >
-                          <H1 style={{ color: "#ffffff" }}>
+                          <H2 style={{ color: "#ffffff" }}>
                             {dashboardData ? dashboardData.OverTime : "00:00"}
-                          </H1>
+                          </H2>
                         </View>
                       </View>
                       <View
@@ -321,9 +320,9 @@ class LinksScreen extends Component<Props, State> {
                             alignItems: "center"
                           }}
                         >
-                          <H1 style={{ color: "#ffffff" }}>
+                          <H2 style={{ color: "#ffffff" }}>
                             {dashboardData ? dashboardData.LateIn : "00"}
-                          </H1>
+                          </H2>
                         </View>
                       </View>
                       <View
@@ -381,9 +380,9 @@ class LinksScreen extends Component<Props, State> {
                             alignItems: "center"
                           }}
                         >
-                          <H1 style={{ color: "#ffffff" }}>
+                          <H2 style={{ color: "#ffffff" }}>
                             {dashboardData ? dashboardData.EarlyOut : "00"}
-                          </H1>
+                          </H2>
                         </View>
                       </View>
                       <View
