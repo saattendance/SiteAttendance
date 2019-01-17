@@ -7,3 +7,4 @@ npm-debug.*
 *.mobileprovision
 lib/firebaseHelper.js
 /kesore.txt
+/lib/firebaseHelper.txt

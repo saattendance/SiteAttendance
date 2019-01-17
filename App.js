@@ -38,12 +38,22 @@ export default class App extends React.Component {
   }
 
   _loadResourcesAsync = async () => {
-    const config = await getRemoteConfig();
+   /* const config = await getRemoteConfig();
     config.on('value', (snapshot) => {
       console.log(snapshot.val());
       console.log('firebase');
       setAppConfig(snapshot.val());
-    });
+    });*/
+      const config = {
+          "API_URL": "http://www.paysalaryday.com:7070/SASystem/",
+          "APP_NAME": "SITE ATTENDANCE",
+          "DESC_KEY": "Description",
+          "GEO_API_ENABLED": true,
+          "GEO_API_KEY": "AIzaSyC_wPzknaOx-vUEMGXZT_wPwApMw7-zryw",
+          "GEO_API_URL": "https://maps.googleapis.com/maps/api/geocode/json?latlng=",
+          "REPORT_PATH": "http://192.168.0.101/testpage1"
+      };
+      setAppConfig(config);
     return Promise.all([
       Asset.loadAsync([
         require('./assets/images/robot-dev.png'),

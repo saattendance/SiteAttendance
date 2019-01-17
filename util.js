@@ -45,7 +45,7 @@ export const getLastLocation = async () => {
 
 export const setAppConfig = async (configs) => {
   appConfigs =configs;
-  return await AsyncStorage.setItem(LAST_LOC, JSON.stringify(appConfigs));
+    return await AsyncStorage.setItem(APP_CONFIG, JSON.stringify(appConfigs));
 }
 
 export const getAppConfig = async () => {

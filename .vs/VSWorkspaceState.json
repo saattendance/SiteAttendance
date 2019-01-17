@@ -6,8 +6,9 @@
     "\\containers\\LoginContainer",
     "\\lib",
     "\\navigation",
-    "\\screens"
+    "\\screens",
+    "\\screens\\Sidebar"
   ],
-  "SelectedNode": "\\screens\\LinksScreen.js",
+  "SelectedNode": "\\lib\\apiHelper.js",
   "PreviewInSolutionExplorer": false
 }
