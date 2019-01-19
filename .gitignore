@@ -8,3 +8,4 @@ npm-debug.*
 lib/firebaseHelper.js
 /kesore.txt
 /lib/firebaseHelper.txt
+.vs

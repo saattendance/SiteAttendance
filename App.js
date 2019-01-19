@@ -5,7 +5,7 @@ import { Root } from 'native-base';
 import configureStore from "./configureStore";
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
-import { getRemoteConfig } from './lib/firebaseHelper';
+//import { getRemoteConfig } from './lib/firebaseHelper';
 import {setAppConfig} from './util';
 
 export default class App extends React.Component {
